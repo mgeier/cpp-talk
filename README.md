@@ -55,8 +55,8 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) helps
   * [problem](https://godbolt.org/z/q87dqfhYe),
     [solution (mistake is recognized)](https://godbolt.org/z/rhj44e1fP),
-    [solution (mistake is fixed - nightly)](https://godbolt.org/z/oTr44sfej)
-    [solution (mistake is fixed - stable)](https://godbolt.org/z/v1o5Gxv9M)
+    [mistake is fixed (nightly)](https://godbolt.org/z/oTr44sfej),
+    [mistake is fixed (stable)](https://godbolt.org/z/v1o5Gxv9M)
 * no range checks by default (C++, because C has no checks at all)
 
 
