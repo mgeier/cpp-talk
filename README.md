@@ -1,4 +1,4 @@
-# C++: overcoming the Stockholm Syndrome
+# C++: Overcoming the Stockholm Syndrome
 
 ## Starting Point
 
@@ -24,9 +24,7 @@ So we have to live with its idiosyncrasies ... right?
   * [The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 * uninitialized variables, uninitialized fields in structs
 * array decay, pointers without length
-  * C https://godbolt.org/z/KGqa6rhMe
-  * C++ https://godbolt.org/z/Ta75anhx5
-  * Rust https://godbolt.org/z/P8zjKzY9q
+  * [problem](https://godbolt.org/z/KGqa6rhMe), [solution](https://godbolt.org/z/P8zjKzY9q)
 
 C++ introduces some work-arounds, but it still provides all the footguns!
 
@@ -63,10 +61,10 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 
 * nullptr
 * references
-  * problem: https://godbolt.org/z/ssMKx1874 (warning is issued)
-  * solution: https://godbolt.org/z/scboa6YqY
-  * problem: https://godbolt.org/z/es9dqxnWv (no warning)
-  * solution: https://godbolt.org/z/qvq7r7WKW
+  * [problem](https://godbolt.org/z/ssMKx1874) (warning is issued),
+    [solution](https://godbolt.org/z/scboa6YqY)
+  * [problem](https://godbolt.org/z/es9dqxnWv) (no warning),
+    [solution](https://godbolt.org/z/qvq7r7WKW)
 * move semantics
 * enum class
 * smart pointers
