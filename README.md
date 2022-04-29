@@ -49,15 +49,15 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 ## Wrong Defaults (C and C++)
 
 * mutable by default
-* deep copy by default
+* deep copy by default (C++)
 * thread un-safe by default
   * and never *really* thread-safe if you're honest
   * [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) helps
-  * problem: https://godbolt.org/z/MjobjEao6
-  * solution:
-    * https://godbolt.org/z/76anTWodP
-    * https://godbolt.org/z/znTc7azec (with atomic counter)
-* no range checks by default
+  * [problem](https://godbolt.org/z/q87dqfhYe),
+    [solution (mistake is recognized)](https://godbolt.org/z/rhj44e1fP),
+    [solution (mistake is fixed - nightly)](https://godbolt.org/z/oTr44sfej)
+    [solution (mistake is fixed - stable)](https://godbolt.org/z/v1o5Gxv9M)
+* no range checks by default (C++, because C has no checks at all)
 
 
 ## Half-Assed Improvements in C++
@@ -71,7 +71,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * move semantics
 * enum class
 * smart pointers
-* optional/variant
+* `std::optional`/`std::variant`
 
 
 ## Unwieldy Library Types That Should Be Built-Ins
@@ -81,7 +81,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * `std::variant`, `visit()`?
 
 
-## misc
+## Misc
 
 * non-exhaustive? (some C++ compilers issue warnings)
 
