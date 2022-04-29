@@ -9,7 +9,7 @@ What we want:
 
 Only C++ can deliver this!
 
-So we have to live with its idiosyncrasies ... right?
+So we have to live with its idiosyncrasies and its horrendous unsafety ... right?
 
 
 ## What is C++?
@@ -25,6 +25,7 @@ So we have to live with its idiosyncrasies ... right?
 * uninitialized variables, uninitialized fields in structs
 * array decay, pointers without length
   * [problem](https://godbolt.org/z/KGqa6rhMe), [solution](https://godbolt.org/z/P8zjKzY9q)
+* null-terminated strings
 * integer overflow: unsigned wraps, signed causes UB
 
 C++ introduces some work-arounds, but it still provides all the footguns!
@@ -70,6 +71,9 @@ C++ introduces some work-arounds, but it still provides all the footguns!
     [solution](https://godbolt.org/z/scboa6YqY)
   * [problem](https://godbolt.org/z/es9dqxnWv) (no warning),
     [solution](https://godbolt.org/z/qvq7r7WKW)
+* `std::string`
+  * an empty string must still store a terminating null character for
+    [`c_str()`](https://en.cppreference.com/w/cpp/string/basic_string/c_str)
 * move semantics
 * `enum class`
 * smart pointers
