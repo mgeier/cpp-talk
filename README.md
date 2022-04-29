@@ -25,6 +25,7 @@ So we have to live with its idiosyncrasies ... right?
 * uninitialized variables, uninitialized fields in structs
 * array decay, pointers without length
   * [problem](https://godbolt.org/z/KGqa6rhMe), [solution](https://godbolt.org/z/P8zjKzY9q)
+* integer overflow: unsigned wraps, signed causes UB
 
 C++ introduces some work-arounds, but it still provides all the footguns!
 
@@ -35,12 +36,14 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * Pointer arithmetic is too easy
 * `if` without braces
   * ["goto fail" bug](https://nvd.nist.gov/vuln/detail/CVE-2014-1266)
-  * Optional braces but required parens? Why not reverse?
+  * Optional braces but required parens ([problem](https://godbolt.org/z/nzzY313EY))?
+    Why not the reverse ([solution](https://godbolt.org/z/MW3Ts3x7r))?
 
 
 ## Misguided Convenience (C++)
 
 * implicit `this->`
+* ...?
 
 
 ## Wrong Defaults (C and C++)
@@ -49,7 +52,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * deep copy by default
 * thread un-safe by default
   * and never *really* thread-safe if you're honest
-  * ThreadSanitizer helps
+  * [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) helps
   * problem: https://godbolt.org/z/MjobjEao6
   * solution:
     * https://godbolt.org/z/76anTWodP
@@ -59,7 +62,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 
 ## Half-Assed Improvements in C++
 
-* nullptr
+* `nullptr` instead of `NULL`
 * references
   * [problem](https://godbolt.org/z/ssMKx1874) (warning is issued),
     [solution](https://godbolt.org/z/scboa6YqY)
@@ -71,17 +74,16 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * optional/variant
 
 
-## unwieldy library types that should be built-ins
+## Unwieldy Library Types That Should Be Built-Ins
 
-* std::array, std::tuple
-* std::string_view, std::span
-* std::variant, visit()?
+* `std::array`, `std::tuple`
+* `std::string_view`, `std::span`
+* `std::variant`, `visit()`?
 
 
 ## misc
 
 * non-exhaustive? (some C++ compilers issue warnings)
-* overflow: unsigned wraps, signed causes UB
 
 
 ## C++ Hall of Shame
