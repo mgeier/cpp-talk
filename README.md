@@ -50,6 +50,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 
 * mutable by default
 * deep copy by default (C++)
+  * moving would be more efficient
 * thread un-safe by default
   * and never *really* thread-safe if you're honest
   * [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) helps
@@ -58,6 +59,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
     [mistake is fixed (nightly)](https://godbolt.org/z/oTr44sfej),
     [mistake is fixed (stable)](https://godbolt.org/z/v1o5Gxv9M)
 * no range checks by default (C++, because C has no checks at all)
+  * `myvector[7]` vs. `myvector.at(7)`
 
 
 ## Half-Assed Improvements in C++
@@ -69,7 +71,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * [problem](https://godbolt.org/z/es9dqxnWv) (no warning),
     [solution](https://godbolt.org/z/qvq7r7WKW)
 * move semantics
-* enum class
+* `enum class`
 * smart pointers
 * `std::optional`/`std::variant`
 
