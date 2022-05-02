@@ -23,10 +23,18 @@ So we have to live with its idiosyncrasies and its horrendous unsafety ... right
 * NULL pointers
   * [The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 * uninitialized variables, uninitialized fields in structs
+  * [problem](https://godbolt.org/z/K5xdE6ddd), [solution](https://godbolt.org/z/3rKzz4Pqb)
 * array decay, pointers without length
   * [problem](https://godbolt.org/z/KGqa6rhMe), [solution](https://godbolt.org/z/P8zjKzY9q)
 * null-terminated strings
-* integer overflow: unsigned wraps, signed causes UB
+  * strings cannot contain the terminating character `\0`
+  * it's easy to forget to provide space for the terminating character (`max_length + 1`)
+  * [`strlen()`](https://en.cppreference.com/w/c/string/byte/strlen) has O(n) complexity
+* [integer overflow](https://en.cppreference.com/w/cpp/language/operator_arithmetic#Overflows):
+  unsigned wraps, signed causes UB
+  * [problem](https://godbolt.org/z/P8bWb4PWb), [solution](https://godbolt.org/z/hvYMMc836)
+  * since C++20: unsigned [integer conversion](https://en.cppreference.com/w/cpp/language/implicit_conversion#Integral_conversions)
+    is not *implementation-defined* anymore but defined as *modulo* behavior
 
 C++ introduces some work-arounds, but it still provides all the footguns!
 
