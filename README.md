@@ -106,9 +106,11 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * `std::variant`, `visit()`?
 
 
-## Misc
+## Nice Things That We Cannot Have Due to Backwards Compatibility
 
-* non-exhaustive? (some C++ compilers issue warnings)
+* exhaustive `switch`
+  * [problem](https://godbolt.org/z/hEWWvT63E) (clang produces a warning),
+    [solution](https://godbolt.org/z/3zjbGKd6h)
 
 
 ## C++ Hall of Shame
