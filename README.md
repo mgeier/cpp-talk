@@ -14,8 +14,15 @@ So we have to live with its idiosyncrasies and its horrendous unsafety ... right
 
 ## What is C++?
 
-* most of C
-* a whole lot of patches
+Ingredients:
+
+1. (most of) C
+2. a whole lot of patches
+
+Compatibility with C:
+
+* main reason for its popularity
+* main reason for its horribleness
 
 
 ## Some Horrible Features of C
@@ -79,13 +86,17 @@ C++ introduces some work-arounds, but it still provides all the footguns!
     [solution](https://godbolt.org/z/scboa6YqY)
   * [problem](https://godbolt.org/z/es9dqxnWv) (no warning),
     [solution](https://godbolt.org/z/qvq7r7WKW)
+* `std::optional`
+  * [problem](https://godbolt.org/z/56K5vj34o), [solution](https://godbolt.org/z/93976z6z6)
+  * [problem (memory overhead)](https://godbolt.org/z/K63hcbzTe),
+    [solution (niche optimization)](https://godbolt.org/z/7jsc17KM6)
 * `std::string`
   * an empty string must still store a terminating null character for
     [`c_str()`](https://en.cppreference.com/w/cpp/string/basic_string/c_str)
 * move semantics
 * `enum class`
 * smart pointers
-* `std::optional`/`std::variant`
+* `std::variant`
 
 
 ## Unwieldy Library Types That Should Be Built-Ins
