@@ -94,8 +94,9 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * an empty string must still store a terminating null character for
     [`c_str()`](https://en.cppreference.com/w/cpp/string/basic_string/c_str)
 * move semantics
-* `enum class`
 * smart pointers
+* `std::string_view`, `std::span`
+* `enum class`
 * `std::variant`
 
 
@@ -109,7 +110,8 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 ## Nice Things That We Cannot Have Due to Backwards Compatibility
 
 * exhaustive `switch`
-  * [problem](https://godbolt.org/z/hEWWvT63E) (clang produces a warning),
+  * [problem](https://godbolt.org/z/hEWWvT63E)
+    (clang produces a warning by default, GCC with `-Wall`),
     [solution](https://godbolt.org/z/3zjbGKd6h)
 
 
