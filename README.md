@@ -30,16 +30,16 @@ Compatibility with C:
 * NULL pointers
   * [The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 * uninitialized variables, uninitialized fields in structs
-  * [problem](https://godbolt.org/z/K5xdE6ddd), [solution](https://godbolt.org/z/3rKzz4Pqb)
+  * [problem](https://godbolt.org/z/zxvasPo7E) (clang warns with `-Wall`), [solution](https://godbolt.org/z/cM3Wz1WYf)
 * array decay, pointers without length
-  * [problem](https://godbolt.org/z/KGqa6rhMe), [solution](https://godbolt.org/z/P8zjKzY9q)
+  * [problem](https://godbolt.org/z/78osf5aT5), [solution](https://godbolt.org/z/zMcbz87Eb)
 * null-terminated strings
   * strings cannot contain the terminating character `\0`
   * it's easy to forget to provide space for the terminating character (`max_length + 1`)
   * [`strlen()`](https://en.cppreference.com/w/c/string/byte/strlen) has O(n) complexity
 * [integer overflow](https://en.cppreference.com/w/cpp/language/operator_arithmetic#Overflows):
   unsigned wraps, signed causes UB
-  * [problem](https://godbolt.org/z/P8bWb4PWb), [solution](https://godbolt.org/z/hvYMMc836)
+  * [problem](https://godbolt.org/z/8WTrhhxWs), [solution](https://godbolt.org/z/xKebGa7xh)
   * since C++20: unsigned [integer conversion](https://en.cppreference.com/w/cpp/language/implicit_conversion#Integral_conversions)
     is not *implementation-defined* anymore but defined as *modulo* behavior
 
@@ -52,8 +52,9 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * Pointer arithmetic is too easy
 * `if` without braces
   * ["goto fail" bug](https://nvd.nist.gov/vuln/detail/CVE-2014-1266)
-  * Optional braces but required parens ([problem](https://godbolt.org/z/nzzY313EY))?
-    Why not the reverse ([solution](https://godbolt.org/z/MW3Ts3x7r))?
+  * Optional braces but required parens ([problem](https://godbolt.org/z/K8W9vnov7),
+    GCC and clang show warning with `-Wall`)?
+    Why not the reverse ([solution](https://godbolt.org/z/Wx6e5oYe6))?
 
 
 ## Misguided Convenience (C++)
@@ -70,10 +71,10 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * thread un-safe by default
   * and never *really* thread-safe if you're honest
   * [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) helps
-  * [problem](https://godbolt.org/z/q87dqfhYe),
-    [solution (mistake is recognized)](https://godbolt.org/z/rhj44e1fP),
-    [mistake is fixed (nightly)](https://godbolt.org/z/oTr44sfej),
-    [mistake is fixed (stable)](https://godbolt.org/z/v1o5Gxv9M)
+  * [problem](https://godbolt.org/z/add17fMjv),
+    [solution (mistake is recognized)](https://godbolt.org/z/Pq3EM9h5e),
+    [mistake is fixed (nightly)](https://godbolt.org/z/ba79M9jjn),
+    [mistake is fixed (stable)](https://godbolt.org/z/7eeWKha6h)
 * no range checks by default (C++, because C has no checks at all)
   * `myvector[7]` vs. `myvector.at(7)`
 
@@ -82,14 +83,14 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 
 * `nullptr` instead of `NULL`
 * references
-  * [problem](https://godbolt.org/z/ssMKx1874) (warning is issued),
-    [solution](https://godbolt.org/z/scboa6YqY)
-  * [problem](https://godbolt.org/z/es9dqxnWv) (no warning),
-    [solution](https://godbolt.org/z/qvq7r7WKW)
+  * [problem](https://godbolt.org/z/Yh3KfbPro) (warning is issued),
+    [solution](https://godbolt.org/z/KjK519v5j)
+  * [problem](https://godbolt.org/z/oEeM4o5qo) (no warning),
+    [solution](https://godbolt.org/z/bK36rvqh6)
 * `std::optional`
-  * [problem](https://godbolt.org/z/56K5vj34o), [solution](https://godbolt.org/z/93976z6z6)
-  * [problem (memory overhead)](https://godbolt.org/z/K63hcbzTe),
-    [solution (niche optimization)](https://godbolt.org/z/7jsc17KM6)
+  * [problem](https://godbolt.org/z/GoGnb7Tce), [solution](https://godbolt.org/z/oc9ePP853)
+  * [problem (memory overhead)](https://godbolt.org/z/G4va5nMYh),
+    [solution (niche optimization)](https://godbolt.org/z/h8455oqrh)
 * `std::string`
   * an empty string must still store a terminating null character for
     [`c_str()`](https://en.cppreference.com/w/cpp/string/basic_string/c_str)
@@ -110,9 +111,9 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 ## Nice Things That We Cannot Have Due to Backwards Compatibility
 
 * exhaustive `switch`
-  * [problem](https://godbolt.org/z/hEWWvT63E)
+  * [problem](https://godbolt.org/z/7rKW1fE4K)
     (clang produces a warning by default, GCC with `-Wall`),
-    [solution](https://godbolt.org/z/3zjbGKd6h)
+    [solution](https://godbolt.org/z/7oE9YjG3M)
 
 
 ## C++ Hall of Shame
