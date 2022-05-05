@@ -60,7 +60,9 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 ## Misguided Convenience (C++)
 
 * implicit `this->`
-* ...?
+* values and references are indistinguishable at the call site
+  * `may_or_may_not_mutate(value)`: the `value` might be copied/moved or passed by reference,
+    we can only find out by looking at the function signature.
 
 
 ## Wrong Defaults (C and C++)
