@@ -83,8 +83,8 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 
 * `nullptr` instead of `NULL`
 * references
-  * [problem](https://godbolt.org/z/Yh3KfbPro) (warning is issued),
-    [solution](https://godbolt.org/z/KjK519v5j)
+  * [problem](https://godbolt.org/z/v73aGeGKx) (warning is issued),
+    [solution](https://godbolt.org/z/njKM7x3sT)
   * [problem](https://godbolt.org/z/oEeM4o5qo) (no warning),
     [solution](https://godbolt.org/z/bK36rvqh6)
 * `std::optional`
