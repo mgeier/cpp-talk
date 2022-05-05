@@ -39,7 +39,7 @@ Compatibility with C:
   * [`strlen()`](https://en.cppreference.com/w/c/string/byte/strlen) has O(n) complexity
 * [integer overflow](https://en.cppreference.com/w/cpp/language/operator_arithmetic#Overflows):
   unsigned wraps, signed causes UB
-  * [problem](https://godbolt.org/z/8WTrhhxWs), [solution](https://godbolt.org/z/xKebGa7xh)
+  * [problem](https://godbolt.org/z/8WTrhhxWs), [solution](https://godbolt.org/z/oa64cWdqx)
   * since C++20: unsigned [integer conversion](https://en.cppreference.com/w/cpp/language/implicit_conversion#Integral_conversions)
     is not *implementation-defined* anymore but defined as *modulo* behavior
 
