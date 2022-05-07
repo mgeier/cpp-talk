@@ -123,3 +123,4 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * `auto_ptr`
 * `iostream`: ridiculously slow, awkward error handling
 * preprocessor
+* [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool)
