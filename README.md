@@ -103,6 +103,10 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * `enum class`
 * `std::variant`
 
+*Simplification Paradox*: New features that are supposed to simplify things
+are *added* (as opposed to *replacing* something),
+making the language larger and more complex.
+
 
 ## Real Improvements in C++
 
