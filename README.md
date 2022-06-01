@@ -88,6 +88,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * [problem](https://godbolt.org/z/v73aGeGKx) (warning is issued),
     [solution](https://godbolt.org/z/njKM7x3sT)
   * [problem](https://godbolt.org/z/oEeM4o5qo) (no warning),
+    [improvement](https://godbolt.org/z/EG1Tvoa4r) (warning with the experimental `-Wlifetime` flag),
     [solution](https://godbolt.org/z/bK36rvqh6)
 * `std::optional`
   * [problem](https://godbolt.org/z/GoGnb7Tce), [solution](https://godbolt.org/z/oc9ePP853)
