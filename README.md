@@ -104,6 +104,18 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * `std::variant`
 
 
+## Real Improvements in C++
+
+Just kidding, this is of course never going to happen!
+
+A promising initiative was the "epochs" proposal in 2019/2020,
+but it sadly didn't lead anywhere:
+[blog post](https://vittorioromeo.info/index/blog/fixing_cpp_with_epochs.html),
+[lightning talk](https://youtu.be/PFdKFoQxRqM),
+[standard proposal](https://wg21.link/p1881),
+[tracking issue](https://github.com/cplusplus/papers/issues/631).
+
+
 ## Unwieldy Library Types That Should Be Built-Ins
 
 * `std::array`, `std::tuple`
