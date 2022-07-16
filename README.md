@@ -101,7 +101,13 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * [problem (not zero-cost)](https://godbolt.org/z/1E1G3frv5),
     [solution](https://godbolt.org/z/EoMqf6Knx)
 * smart pointers
-* `std::string_view`, `std::span`
+* `std::string_view`
+  * can be dangling, e.g. when passing temporary `std::string` to `std::string_view` argument
+  * methods like `.find()` have to be
+    [implemented](https://en.cppreference.com/w/cpp/string/basic_string/find)
+    [twice](https://en.cppreference.com/w/cpp/string/basic_string_view/find)
+    * [solution (auto-dereferencing)](https://godbolt.org/z/9nfrcv7ns)
+* `std::span`
 * `enum class`
 * `std::variant`
 
