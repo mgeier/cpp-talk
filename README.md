@@ -98,6 +98,8 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * an empty string must still store a terminating null character for
     [`c_str()`](https://en.cppreference.com/w/cpp/string/basic_string/c_str)
 * move semantics
+  * [problem (not zero-cost)](https://godbolt.org/z/1E1G3frv5),
+    [solution](https://godbolt.org/z/EoMqf6Knx)
 * smart pointers
 * `std::string_view`, `std::span`
 * `enum class`
