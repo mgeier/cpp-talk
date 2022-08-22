@@ -101,9 +101,13 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * correctly implementing move constructors and move assignment operators is very hard!
   * [problem (not zero-cost)](https://godbolt.org/z/1E1G3frv5),
     [solution](https://godbolt.org/z/EoMqf6Knx)
-* smart pointers
+* `std::unique_ptr`
+* `std::shared_ptr`
+  * thread-safe? [`std::atomic<std::shared_ptr>`](https://en.cppreference.com/w/cpp/memory/shared_ptr/atomic2)?
 * `std::string_view`
-  * can be dangling, e.g. when passing temporary `std::string` to `std::string_view` argument
+  * can be dangling, e.g. when used as local variable or as function output parameter;
+    using `std::string_view` as input parameter should be fine
+    (and is encouraged if no ownership is desired)
   * methods like `.find()` have to be
     [implemented](https://en.cppreference.com/w/cpp/string/basic_string/find)
     [twice](https://en.cppreference.com/w/cpp/string/basic_string_view/find)
