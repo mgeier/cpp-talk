@@ -73,10 +73,10 @@ C++ introduces some work-arounds, but it still provides all the footguns!
 * thread un-safe by default
   * and never *really* thread-safe if you're honest
   * [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) helps
-  * [problem](https://godbolt.org/z/add17fMjv),
-    [solution (mistake is recognized)](https://godbolt.org/z/Pq3EM9h5e),
-    [mistake is fixed (nightly)](https://godbolt.org/z/ba79M9jjn),
-    [mistake is fixed (stable)](https://godbolt.org/z/7eeWKha6h)
+  * [problem (ThreadSanitizer complains)](https://godbolt.org/z/Gn9TExKqx),
+    [solution (mistake is recognized by the compiler)](https://godbolt.org/z/oq8YfoG4G),
+    [mistake is fixed (using `std::thread::scope`)](https://godbolt.org/z/as4EKcPWq),
+    [mistake is fixed (using `std::thread::spawn`)](https://godbolt.org/z/7eeWKha6h)
 * no range checks by default (C++, because C has no checks at all)
   * `myvector[7]` vs. `myvector.at(7)`
 
