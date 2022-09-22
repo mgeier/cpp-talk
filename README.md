@@ -30,7 +30,7 @@ Compatibility with C:
 * NULL pointers
   * [The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 * uninitialized variables, uninitialized fields in structs
-  * [problem](https://godbolt.org/z/zxvasPo7E) (clang warns with `-Wall`), [solution](https://godbolt.org/z/cM3Wz1WYf)
+  * [problem](https://godbolt.org/z/zxvasPo7E) (clang warns with `-Wall`), [solution](https://godbolt.org/z/b5MPM94P7)
 * array decay, pointers without length
   * [problem](https://godbolt.org/z/78osf5aT5), [solution](https://godbolt.org/z/zMcbz87Eb)
 * null-terminated strings
