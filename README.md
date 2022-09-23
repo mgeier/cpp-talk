@@ -33,6 +33,8 @@ Compatibility with C:
   * [problem](https://godbolt.org/z/zxvasPo7E) (clang warns with `-Wall`),
     [solution](https://godbolt.org/z/b5MPM94P7),
     [Miri detects undefined behavior in unsafe code](https://play.rust-lang.org/?version=stable&edition=2021&gist=cedaffcf2203b20533f6ebdaf9db35ed)
+  * if uninitialized data is really needed:
+    [no overhead](https://godbolt.org/z/s87M35fjM), [still no overhead](https://godbolt.org/z/5hbEhW56n)
 * array decay, pointers without length
   * [problem](https://godbolt.org/z/78osf5aT5), [solution](https://godbolt.org/z/zMcbz87Eb)
 * null-terminated strings
