@@ -107,6 +107,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
   * [problem (not zero-cost)](https://godbolt.org/z/1E1G3frv5),
     [solution](https://godbolt.org/z/EoMqf6Knx)
 * `std::unique_ptr`
+  * [problem (not zero-cost)](https://godbolt.org/z/Tfv9rhKj4), [solution](https://godbolt.org/z/jxzYfxfEY)
 * `std::shared_ptr`
   * thread-safe? [`std::atomic<std::shared_ptr>`](https://en.cppreference.com/w/cpp/memory/shared_ptr/atomic2)?
 * `std::string_view`
