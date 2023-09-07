@@ -104,7 +104,7 @@ C++ introduces some work-arounds, but it still provides all the footguns!
     [`c_str()`](https://en.cppreference.com/w/cpp/string/basic_string/c_str)
 * move semantics
   * correctly implementing move constructors and move assignment operators is very hard!
-  * [problem (not zero-cost)](https://godbolt.org/z/1E1G3frv5),
+  * [problem (not zero-cost)](https://godbolt.org/z/a6dWWa78P),
     [solution](https://godbolt.org/z/EoMqf6Knx)
 * `std::unique_ptr`
   * [problem (not zero-cost)](https://godbolt.org/z/Tfv9rhKj4), [solution](https://godbolt.org/z/jxzYfxfEY)
