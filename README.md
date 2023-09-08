@@ -96,8 +96,8 @@ C++ introduces some work-arounds, but it still provides all the footguns!
     [solution](https://godbolt.org/z/bK36rvqh6)
 * `std::optional`
   * [problem](https://godbolt.org/z/GoGnb7Tce), [solution](https://godbolt.org/z/oc9ePP853)
-  * [problem (memory overhead)](https://godbolt.org/z/G4va5nMYh),
-    [solution (niche optimization)](https://godbolt.org/z/h8455oqrh)
+  * [problem (memory overhead)](https://godbolt.org/z/ezWd34Gb6),
+    [solution (niche optimization)](https://godbolt.org/z/TGo9EvM1f)
   * assignment operator (which delegates to inner type) makes `std::optional<T&>` not feasible
 * `std::string`
   * an empty string must still store a terminating null character for
